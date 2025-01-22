@@ -3,7 +3,7 @@ import jax
 import jax.numpy as jnp
 from typing import Tuple, List, Dict
 from ..gene import NodeGene, ConnectionGene
-from ...motifNEAT.common.config import NEATConfig
+from ...common.config import NEATConfig
 
 def align_genes(parent1_genes: Dict[int, NodeGene],
                parent2_genes: Dict[int, NodeGene]) -> Tuple[List[Tuple[NodeGene, NodeGene]], 

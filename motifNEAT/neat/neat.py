@@ -4,8 +4,8 @@ import jax.numpy as jnp
 import equinox as eqx
 from typing import List, Tuple, Optional
 from ..genome.gene import NodeGene, ConnectionGene
-from ...genome.operations.mutation import mutate_genome
-from ...genome.operations.crossover import crossover_genome
+from ..genome.operations.mutation import mutate_genome
+from ..genome.operations.crossover import crossover_genome
 from . import species as species_ops
 from ..common.config import NEATConfig
 from ..common.state import State

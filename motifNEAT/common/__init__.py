@@ -1,7 +1,7 @@
 """Common utilities and configurations."""
 
 from .activation import Activation
-from .config import Config
+# from .config import Config
 from .state import State
 from .config import NEATConfig
 

@@ -3,7 +3,7 @@ import jax
 import jax.numpy as jnp
 from typing import Tuple, List
 from ..gene import NodeGene, ConnectionGene
-from ...motifNEAT.common.config import NEATConfig
+from ...common.config import NEATConfig
 
 def mutate_weight(connection: ConnectionGene, 
                  config: NEATConfig, 
