@@ -2,6 +2,7 @@ import pytest
 import jax.numpy as jnp
 from motifNEAT.common.config import NEATConfig
 from motifNEAT.training.experiment import NEATExperiment
+from motifNEAT.tests.conftest import basic_config
 
 def simple_fitness_function(forward_fn):
     """Simple fitness function that rewards outputs close to 0.5."""
@@ -77,3 +78,35 @@ class TestNEATExperiment:
         _, fitness2 = experiment.train(seed=43)
         
         assert fitness1 != fitness2 
+
+def main():
+    # Create test instance
+    test_instance = TestNEATExperiment()
+    
+    # Get basic_config fixture
+    config = NEATConfig(
+        num_inputs=2,
+        num_outputs=1,
+        population_size=10,  # Small population for testing
+        num_species=3,
+        num_generations=5,
+        fitness_threshold=float('inf')
+    )
+    
+    print("Running experiment initialization test...")
+    # breakpoint()  # Debug point 1
+    test_instance.test_experiment_initialization(config)
+    print("Initialization test passed!")
+    
+    print("\nRunning training test...")
+    # breakpoint()  # Debug point 2
+    test_instance.test_training_run(config)
+    print("Training test passed!")
+    
+    print("\nRunning config validation test...")
+    # breakpoint()  # Debug point 3
+    test_instance.test_config_validation()
+    print("Config validation test passed!")
+
+if __name__ == "__main__":
+    main()
